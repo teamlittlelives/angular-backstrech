@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "homepage": "http://srobbin.com/jquery-plugins/backstretch/",
   "main": "angular-backstretch.js",
+  "ignore": [],
   "keywords": [ 
     "backstretch",
     "angular",

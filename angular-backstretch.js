@@ -21,16 +21,22 @@
                 throw new Error('ngBackstretch | Please make sure the jquery backstretch plugin is included before this directive is added.')
 
             return {
-                restrict: 'A',
+                restrict: 'E',
+                scope: {
+                    configuration: '='
+                },
                 link: function(scope, element, attr) {
 
-                    if (attr.ngBackstretch === '' || typeof attr.ngBackstretch === 'undefined')
-                        throw new Error('ngBackstretch | You have not declared an image to be stretched.')
+                    var images = scope.configuration.images || [];
+                    var options = scope.configuration.options || {};
 
-                    if (element.context.toString().match(/HTMLBodyElement/gi))
-                        return $.backstretch(attr.ngBackstretch);
+                    if (images.length == 0)
+                        throw new Error('myBackstretch | You have not declared an image to be stretched.');
 
-                    $(element).backstretch(attr.ngBackstretch);
+                    if (element.context.toString().match(/HTMLBodyElement/gi) || options.bodyBackground)
+                        return $.backstretch(images, options);
+                    
+                    $(element).backstretch(images, options);
 
                 }
             }

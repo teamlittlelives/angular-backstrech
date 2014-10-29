@@ -23,12 +23,12 @@
             return {
                 restrict: 'E',
                 scope: {
-                    configuration: '='
+                    backstretchConfiguration: '='
                 },
                 link: function(scope, element, attr) {
 
-                    var images = scope.configuration.images || [];
-                    var options = scope.configuration.options || {};
+                    var images = scope.backstretchConfiguration.images || [];
+                    var options = scope.backstretchConfiguration.options || {};
 
                     if (images.length == 0)
                         throw new Error('myBackstretch | You have not declared an image to be stretched.');

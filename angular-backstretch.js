@@ -21,7 +21,7 @@
                 throw new Error('ngBackstretch | Please make sure the jquery backstretch plugin is included before this directive is added.')
 
             return {
-                restrict: 'E',
+                restrict: 'A',
                 scope: {
                     backstretchConfiguration: '='
                 },

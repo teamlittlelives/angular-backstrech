@@ -18,6 +18,6 @@
   }],
   "dependencies": {
     "jquery": "~1.9.1",
-    "jquery-backstretch": "~2.0.4"
+    "jquery-backstretch": "2.0.4"
   }
 }
